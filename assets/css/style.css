@@ -5,12 +5,23 @@ body {
 }
 
 textarea{
-  background: transparent;
+  background: grey;
   border: none;
   resize: none;
-  color: #000000;
+  color: white;
   border-left: 1px solid black;
   padding: 10px;
+}
+
+.time {
+  display: flex;
+  border-top: 2px solid black;
+}
+
+.save {
+  background-color:deepskyblue;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .jumbotron {
