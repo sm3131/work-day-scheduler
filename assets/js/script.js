@@ -27,42 +27,45 @@ function saveClick(event) {
     arrayIndex = clickToIndex(clickTarget)
     tasksArray[arrayIndex] = $("#" + textId).val()
     console.log(tasksArray);
-
-}
-
-function textSelection() {
-    var textArea = $("textarea");
-    time2Index(textArea);
 }
 
 function clickToText(clickTask) {
     switch (clickTask) {
         case "click9":
             text = "task9"
-    
+            break;
+
         case "click10":
-            text = "task9"
-            
+            text = "task10"
+            break; 
+
         case "click11":
-            text = "task9"
-            
+            text = "task11"
+            break;
+
         case "click12":
-            text = "task9"
-            
+            text = "task12"
+            break;
+
         case "click1":
-            text = "task9"
-            
+            text = "task1"
+            break;
+
         case "click2":
-            text = "task9"
-            
+            text = "task2"
+            break;
+
         case "click3":
-            text = "task9"
-            
+            text = "task3"
+            break;
+
         case "click4":
-            text = "task9"
-            
+            text = "task4"
+            break;
+
         case "click5":
-            text = "task9"
+            text = "task5"
+            break;
     };
     return(text);
     };
@@ -72,34 +75,47 @@ function clickToText(clickTask) {
         switch(clickIndex) {
             case "click9":
                 clickArrIndex = 0
-        
+                break;
+
             case "click10":
                 clickArrIndex = 1
-                
+                break;
+
             case "click11":
                 clickArrIndex = 2
-                
+                break;
+
             case "click12":
                 clickArrIndex = 3
-                
+                break;
+
             case "click1":
                 clickArrIndex = 4
-                
+                break;
+
             case "click2":
                 clickArrIndex = 5
-                
+                break;
+
             case "click3":
                 clickArrIndex = 6
-                
+                break;
+
             case "click4":
                 clickArrIndex = 7
-                
+                break;
+
             case "click5":
                 clickArrIndex = 8
+                break;
         }
-        return clickArrIndex;
+        return (clickArrIndex);
     }
 
 
 
     
+// function textSelection() {
+//     var textArea = $("textarea");
+//     time2Index(textArea);
+// }
