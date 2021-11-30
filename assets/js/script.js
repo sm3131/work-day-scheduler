@@ -14,6 +14,7 @@ var tasksArray = [
 ]
 
 $(".save").on("click", saveClick);
+$(document).ready(reloadTasks)
 
 function saveClick(event) {
     if(event.target.matches(".save")) {
@@ -27,7 +28,24 @@ function saveClick(event) {
     arrayIndex = clickToIndex(clickTarget)
     tasksArray[arrayIndex] = $("#" + textId).val()
     console.log(tasksArray);
+
+    localStorage.setItem("calendarTasks", JSON.stringify(tasksArray));
 }
+
+function reloadTasks() {
+    var savedTasks = localStorage.getItem("calendarTasks")
+
+    if(!savedTasks) {
+        return false;
+    }
+    savedTasks = JSON.parse(savedTasks);
+    console.log(savedTasks);
+
+    for (var i = 0; i < savedTasks.length; i++) {
+        $(".task" + i).text(savedTasks[i]);
+    }
+
+};
 
 function clickToText(clickTask) {
     switch (clickTask) {
