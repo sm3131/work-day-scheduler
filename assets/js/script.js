@@ -3,13 +3,16 @@ var currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
 $(".save").on("click", saveClick);
 $(document).ready(reloadTasks)
+
+var currentHour = moment().hour();
+console.log(currentHour);
+colorCode(currentHour);
 checkHourOfDay();
 
 function saveClick(event) {
     if (event.target.matches(".save")) {
         var clickTarget = $(event.target).attr("id");
         var textAreaContent = $("#" + clickTarget).prev().val();
-        //var textKey = $("#" + clickTarget).prev().attr("id");
     }
 
     var storedTasksArr = getStoredItems();
@@ -90,7 +93,7 @@ function clickToIndex(clickIndex) {
 }
 
 function checkHourOfDay() {
-    var currentHour = moment().hour();
+    // var currentHour = moment().hour();
     setInterval(function() {
         colorCode(currentHour);
         console.log(currentHour);
@@ -119,16 +122,12 @@ function checkHourOfDay() {
 
 // testColors();
 
-// colorCode();
-
 function colorCode(currentHour1) {
     for (t = 1; t < 10; t++) {
         //debugger;
         var hourlyTaskString = $(".time" + t).html();
         var hourlyTask = parseInt(hourlyTaskString);
         var militaryTime = standardToMilitary(hourlyTask);
-
-        // var currentHour = moment().hour();
 
         if (militaryTime === currentHour1) {
             $("#task" + t).css("background-color", "red");
@@ -142,9 +141,6 @@ function colorCode(currentHour1) {
             $("#task" + t).css("background-color", "green");
             console.log("greater");
         }
-
-        // var hourlyTask = $(hourlyTask).parseInt();
-        // console.log(hourlyTask);
     }
 }
 

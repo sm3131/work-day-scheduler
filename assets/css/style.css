@@ -5,7 +5,7 @@ body {
 }
 
 textarea{
-  background: grey;
+  opacity: 0.6;
   border: none;
   resize: none;
   color: white;
@@ -22,14 +22,46 @@ textarea{
   background-color:deepskyblue;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  opacity: 1;
+  display:flex;
+  display:flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.clear {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  background-color:red;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: white;
+  border:none;
+}
+
+.trash .material-icons {
+  display:flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
+  background-color: honeydew;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+}
+
+.display-3 {
+  color: cadetblue;
+}
+
+header p {
+  color: cadetblue;
+  font-size: 24px;
 }
 
 .description{
