@@ -16,6 +16,7 @@ textarea{
 .time {
   display: flex;
   border-top: 2px solid black;
+  justify-content: space-evenly;
 }
 
 .save {
@@ -45,6 +46,10 @@ textarea{
   justify-content: center;
   padding-bottom: 10px;
   padding-top: 5px;
+}
+
+span.trash.material-icons {
+  padding-top: 12px;
 }
 
 .jumbotron {

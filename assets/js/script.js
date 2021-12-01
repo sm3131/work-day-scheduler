@@ -103,25 +103,6 @@ function checkHourOfDay() {
     }, 60000);
 }
 
-// function testColors() {
-//     var time = 0;
-//     var dayHour = setInterval(function() {
-//         var currentHour = time;
-//         colorCode(currentHour);
-//         console.log(currentHour);
-//         time++;
-//         if(currentHour === 24) {
-//             time = 0
-//         }
-//         console.log(time);
-//         if (currentHour === 0) {
-//             $("textarea").css("background-color", "green");
-//         }
-//     }, 2000);
-// }
-
-// testColors();
-
 function colorCode(currentHour1) {
     for (t = 1; t < 10; t++) {
         //debugger;
@@ -176,3 +157,38 @@ function standardToMilitary(hourly) {
     }
     return military;
 }
+
+$(".clear-btn").on("click", clearTask);
+
+function clearTask(event) {
+    for (var c = 0; c < 9; c++) {
+        var clearTarget = event.target;
+        if (clearTarget.matches(".clear" + c, ".trash" + c)) {
+            $(".task" + c).text("");
+            
+        }
+        else if (clearTarget.matches(".trash" + c)) {
+            $(".task" + c).text("");
+            break;
+        }
+    }
+};
+
+// function testColors() {
+//     var time = 0;
+//     var dayHour = setInterval(function() {
+//         var currentHour = time;
+//         colorCode(currentHour);
+//         console.log(currentHour);
+//         time++;
+//         if(currentHour === 24) {
+//             time = 0
+//         }
+//         console.log(time);
+//         if (currentHour === 0) {
+//             $("textarea").css("background-color", "green");
+//         }
+//     }, 2000);
+// }
+
+// testColors();
