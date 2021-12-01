@@ -162,10 +162,15 @@ $(".clear-btn").on("click", clearTask);
 
 function clearTask(event) {
     for (var c = 0; c < 9; c++) {
+        //debugger;
         var clearTarget = event.target;
         if (clearTarget.matches(".clear" + c, ".trash" + c)) {
             $(".task" + c).text("");
-            
+            clearStoredItems = localStorage.getItem("calendarTasks");
+            clearStoredItems = JSON.parse(clearStoredItems);
+            clearStoredItems.splice(c, 1, "");
+            console.log(clearStoredItems);
+            localStorage.setItem("calendarTasks", JSON.stringify(clearStoredItems))
         }
         else if (clearTarget.matches(".trash" + c)) {
             $(".task" + c).text("");
