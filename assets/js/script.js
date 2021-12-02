@@ -4,10 +4,12 @@ var currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
 $(".save").on("click", saveClick);
 $(document).ready(reloadTasks)
 
-var currentHour = moment().hour();
-console.log(currentHour);
-colorCode(currentHour);
-checkHourOfDay();
+// var currentHour = moment().hour();
+// console.log(currentHour);
+// colorCode(currentHour);
+
+// colorCode();
+// checkHourOfDay();
 
 function saveClick(event) {
     if (event.target.matches(".save")) {
@@ -92,16 +94,46 @@ function clickToIndex(clickIndex) {
     return (clickArrIndex);
 }
 
-function checkHourOfDay() {
-    // var currentHour = moment().hour();
-    setInterval(function() {
-        colorCode(currentHour);
-        console.log(currentHour);
-        if(currentHour === 0) {
-            $("textarea").css("background-color", "green");
-        }
-    }, 60000);
-}
+// function checkHourOfDay() {
+//     var currentHour = moment().hour();
+//     console.log(currentHour);
+//     setInterval(function() {
+//         colorCode(currentHour);
+//         console.log(currentHour);
+//         //location.reload();
+//         if(currentHour === 0) {
+//             $("textarea").css("background-color", "green");
+//         }
+//     }, 60000);
+// }
+
+//var currentHour = moment().hour();
+
+
+    // setInterval(function() {
+    //     colorCode();
+    //     //console.log(currentHour);
+    //     //location.reload();
+    //     if(currentHour === 0) {
+    //         $("textarea").css("background-color", "green");
+    //     }
+    //     console.log("working");
+    // }, 60000);
+
+    //setInterval(colorCode, 6000)
+    
+    var currentHour = moment().hour()
+    console.log(currentHour);
+    colorCode(currentHour);
+
+    setInterval(checkTime, 3000);
+
+    function checkTime() {
+        var checkCurrentHour = moment().hour()
+        colorCode(checkCurrentHour);
+        console.log(checkCurrentHour);
+    }
+//60000
 
 function colorCode(currentHour1) {
     for (t = 1; t < 10; t++) {
@@ -110,21 +142,76 @@ function colorCode(currentHour1) {
         var hourlyTask = parseInt(hourlyTaskString);
         var militaryTime = standardToMilitary(hourlyTask);
 
-        if (militaryTime === currentHour1) {
+        if (currentHour1 === militaryTime) {
             $("#task" + t).css("background-color", "red");
             console.log("equal");
 
-        } else if (militaryTime < currentHour1) {
-            console.log("less");
+        } else if (currentHour1 > militaryTime) {
+            console.log("greater than");
             $("#task" + t).css("background-color", "grey");
 
-        } else if (militaryTime > currentHour1) {
+        } else if (currentHour1 < militaryTime) {
             $("#task" + t).css("background-color", "green");
-            console.log("greater");
+            console.log("less than");
         }
     }
+    console.log(currentHour1);
 }
 
+///////////CORRECT/////////////////
+
+// function colorCode() {
+//     var currentHour = moment().hour();
+//     for (t = 1; t < 10; t++) {
+    
+//         var hourlyTaskString = $(".time" + t).html();
+//         var hourlyTask = parseInt(hourlyTaskString);
+//         var militaryTime = standardToMilitary(hourlyTask);
+
+//         console.log(currentHour);
+
+//         if (currentHour === militaryTime) {
+//             $("#task" + t).css("background-color", "red");
+//             console.log("equal");
+
+//         } else if (currentHour > militaryTime) {
+//             console.log("greater than");
+//             $("#task" + t).css("background-color", "grey");
+
+//         } else if (currentHour < militaryTime) {
+//             $("#task" + t).css("background-color", "green");
+//             console.log("less than");
+//         }
+//     }
+// }
+
+
+// function colorCode() {
+//     //var currentHour = moment().hour();
+//     currentHour = 9
+//     for (t = 1; t < 10; t++) {
+    
+//         var hourlyTaskString = $(".time" + t).html();
+//         var hourlyTask = parseInt(hourlyTaskString);
+//         var militaryTime = standardToMilitary(hourlyTask);
+
+//         console.log(currentHour);
+
+//         if (currentHour === militaryTime) {
+//             $("#task" + t).css("background-color", "red");
+//             console.log("equal");
+
+//         } else if (currentHour > militaryTime) {
+//             console.log("greater than");
+//             $("#task" + t).css("background-color", "grey");
+
+//         } else if (currentHour < militaryTime) {
+//             $("#task" + t).css("background-color", "green");
+//             console.log("less than");
+//         }
+//     }
+//     currentHour = ++currentHour
+// }
 function standardToMilitary(hourly) {
     switch (hourly) {
         case 9:
@@ -174,6 +261,11 @@ function clearTask(event) {
         }
         else if (clearTarget.matches(".trash" + c)) {
             $(".task" + c).text("");
+            clearStoredItems = localStorage.getItem("calendarTasks");
+            clearStoredItems = JSON.parse(clearStoredItems);
+            clearStoredItems.splice(c, 1, "");
+            console.log(clearStoredItems);
+            localStorage.setItem("calendarTasks", JSON.stringify(clearStoredItems))
             break;
         }
     }
