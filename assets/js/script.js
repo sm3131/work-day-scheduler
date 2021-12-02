@@ -114,9 +114,9 @@ function clickToIndex(clickIndex) {
     //     colorCode();
     //     //console.log(currentHour);
     //     //location.reload();
-    //     if(currentHour === 0) {
-    //         $("textarea").css("background-color", "green");
-    //     }
+    // if(currentHour === 0) {
+    //     $("textarea").css("background-color", "green");
+    // }
     //     console.log("working");
     // }, 60000);
 
@@ -126,14 +126,18 @@ function clickToIndex(clickIndex) {
     console.log(currentHour);
     colorCode(currentHour);
 
-    setInterval(checkTime, 3000);
+    setInterval(checkTime, 60000);
 
     function checkTime() {
         var checkCurrentHour = moment().hour()
         colorCode(checkCurrentHour);
         console.log(checkCurrentHour);
+        currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
+        console.log(currentDate);
+        if(currentHour === 0) {
+            $("textarea").css("background-color", "green");
+        }
     }
-//60000
 
 function colorCode(currentHour1) {
     for (t = 1; t < 10; t++) {
