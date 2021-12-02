@@ -21,13 +21,37 @@ textarea{
 
 .save {
   background-color:deepskyblue;
+  border: none;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   opacity: 1;
   display:flex;
-  display:flex;
   justify-content: center;
+  flex-wrap:wrap;
   padding-top: 25px;
+  color:white;
+}
+
+button.save {
+  display:inline-grid;
+  font-size:18px;
+}
+
+@media (max-width: 770px) {
+  .time {
+    font-size: 14px;
+  }
+  
+  .save-span {
+    display:none;
+  }
+
+  .trash-span {
+    display:none;
+  }
+  span.trash.material-icons {
+    margin-top: 11px;
+}
 }
 
 .clear {
@@ -50,6 +74,7 @@ textarea{
 
 span.trash.material-icons {
   padding-top: 12px;
+  font-size: 28px;
 }
 
 .jumbotron {

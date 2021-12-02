@@ -1,15 +1,10 @@
 var currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
-
+var currentHour = moment().hour()
+console.log(currentHour);
+colorCode(currentHour);
 
 $(".save").on("click", saveClick);
 $(document).ready(reloadTasks)
-
-// var currentHour = moment().hour();
-// console.log(currentHour);
-// colorCode(currentHour);
-
-// colorCode();
-// checkHourOfDay();
 
 function saveClick(event) {
     if (event.target.matches(".save")) {
@@ -38,7 +33,6 @@ function reloadTasks() {
     for (var i = 0; i < savedTasks.length; i++) {
         $(".task" + i).text(savedTasks[i]);
     }
-
 };
 
 function getStoredItems() {
@@ -94,38 +88,6 @@ function clickToIndex(clickIndex) {
     return (clickArrIndex);
 }
 
-// function checkHourOfDay() {
-//     var currentHour = moment().hour();
-//     console.log(currentHour);
-//     setInterval(function() {
-//         colorCode(currentHour);
-//         console.log(currentHour);
-//         //location.reload();
-//         if(currentHour === 0) {
-//             $("textarea").css("background-color", "green");
-//         }
-//     }, 60000);
-// }
-
-//var currentHour = moment().hour();
-
-
-    // setInterval(function() {
-    //     colorCode();
-    //     //console.log(currentHour);
-    //     //location.reload();
-    // if(currentHour === 0) {
-    //     $("textarea").css("background-color", "green");
-    // }
-    //     console.log("working");
-    // }, 60000);
-
-    //setInterval(colorCode, 6000)
-    
-    var currentHour = moment().hour()
-    console.log(currentHour);
-    colorCode(currentHour);
-
     setInterval(checkTime, 60000);
 
     function checkTime() {
@@ -141,7 +103,6 @@ function clickToIndex(clickIndex) {
 
 function colorCode(currentHour1) {
     for (t = 1; t < 10; t++) {
-        //debugger;
         var hourlyTaskString = $(".time" + t).html();
         var hourlyTask = parseInt(hourlyTaskString);
         var militaryTime = standardToMilitary(hourlyTask);
@@ -162,60 +123,6 @@ function colorCode(currentHour1) {
     console.log(currentHour1);
 }
 
-///////////CORRECT/////////////////
-
-// function colorCode() {
-//     var currentHour = moment().hour();
-//     for (t = 1; t < 10; t++) {
-    
-//         var hourlyTaskString = $(".time" + t).html();
-//         var hourlyTask = parseInt(hourlyTaskString);
-//         var militaryTime = standardToMilitary(hourlyTask);
-
-//         console.log(currentHour);
-
-//         if (currentHour === militaryTime) {
-//             $("#task" + t).css("background-color", "red");
-//             console.log("equal");
-
-//         } else if (currentHour > militaryTime) {
-//             console.log("greater than");
-//             $("#task" + t).css("background-color", "grey");
-
-//         } else if (currentHour < militaryTime) {
-//             $("#task" + t).css("background-color", "green");
-//             console.log("less than");
-//         }
-//     }
-// }
-
-
-// function colorCode() {
-//     //var currentHour = moment().hour();
-//     currentHour = 9
-//     for (t = 1; t < 10; t++) {
-    
-//         var hourlyTaskString = $(".time" + t).html();
-//         var hourlyTask = parseInt(hourlyTaskString);
-//         var militaryTime = standardToMilitary(hourlyTask);
-
-//         console.log(currentHour);
-
-//         if (currentHour === militaryTime) {
-//             $("#task" + t).css("background-color", "red");
-//             console.log("equal");
-
-//         } else if (currentHour > militaryTime) {
-//             console.log("greater than");
-//             $("#task" + t).css("background-color", "grey");
-
-//         } else if (currentHour < militaryTime) {
-//             $("#task" + t).css("background-color", "green");
-//             console.log("less than");
-//         }
-//     }
-//     currentHour = ++currentHour
-// }
 function standardToMilitary(hourly) {
     switch (hourly) {
         case 9:
@@ -253,7 +160,6 @@ $(".clear-btn").on("click", clearTask);
 
 function clearTask(event) {
     for (var c = 0; c < 9; c++) {
-        //debugger;
         var clearTarget = event.target;
         if (clearTarget.matches(".clear" + c, ".trash" + c)) {
             $(".task" + c).text("");
@@ -275,21 +181,3 @@ function clearTask(event) {
     }
 };
 
-// function testColors() {
-//     var time = 0;
-//     var dayHour = setInterval(function() {
-//         var currentHour = time;
-//         colorCode(currentHour);
-//         console.log(currentHour);
-//         time++;
-//         if(currentHour === 24) {
-//             time = 0
-//         }
-//         console.log(time);
-//         if (currentHour === 0) {
-//             $("textarea").css("background-color", "green");
-//         }
-//     }, 2000);
-// }
-
-// testColors();
