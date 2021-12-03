@@ -27,7 +27,7 @@ If you would like to access this project's code, you will need to visit this [Gi
 # Preview
 
 Below is a screenshot of the Work Day Scheduler in the browser:
-![Work Day Scheduler](assets/images/)
+![Work Day Scheduler](assets/images/work-day-cal.png)
 
 # Functionality
 
@@ -49,6 +49,6 @@ The second button on the right is a clear task button which when clicked allows 
 
 The link to the work day scheduler is provided below:
 <br>
-LINK!!!
+https://sm3131.github.io/work-day-scheduler/
 
 # Credit / Contribution
