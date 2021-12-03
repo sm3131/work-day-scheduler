@@ -37,23 +37,6 @@ button.save {
   font-size:18px;
 }
 
-@media (max-width: 770px) {
-  .time {
-    font-size: 14px;
-  }
-  
-  .save-span {
-    display:none;
-  }
-
-  .trash-span {
-    display:none;
-  }
-  span.trash.material-icons {
-    margin-top: 11px;
-}
-}
-
 .clear {
   display:flex;
   justify-content:center;
@@ -141,4 +124,29 @@ header p {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+@media (max-width: 770px) {
+  .display-3 {
+    font-size: 48px;
+  }
+
+  header p {
+    font-size: 18px;
+  }
+
+  .time {
+    font-size: 14px;
+  }
+
+  .save-span {
+    display:none;
+  }
+
+  .trash-span {
+    display:none;
+  }
+  span.trash.material-icons {
+    margin-top: 11px;
+}
 }
