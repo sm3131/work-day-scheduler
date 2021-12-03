@@ -52,3 +52,5 @@ The link to the work day scheduler is provided below:
 https://sm3131.github.io/work-day-scheduler/
 
 # Credit / Contribution
+
+This project contained starter code from ____________ which provided the html and css files. These files provided a general structure and style for the calendar but the majority of the html was created by myself, Sammi Moore. Also all of the javascript was created by myself. So ultimately all of the functionality was developed by me through the use of jQuery within javascript. The styling was also a combination of starter code css, my own css, and bootstrap. 
