@@ -1,6 +1,5 @@
 var currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
 var currentHour = moment().hour()
-console.log(currentHour);
 colorCode(currentHour);
 
 $(".save").on("click", saveClick);
@@ -23,6 +22,7 @@ function saveClick(event) {
 function reloadTasks() {
 
     var savedTasks = localStorage.getItem("calendarTasks")
+    console.log(savedTasks);
 
     if (!savedTasks) {
         return false;
@@ -37,12 +37,14 @@ function reloadTasks() {
 
 function getStoredItems() {
     var storedItems = localStorage.getItem("calendarTasks")
+    console.log(storedItems);
 
     if (!storedItems) {
         return storedItems = ["", "", "", "", "", "", "", "", ""];
     }
 
     storedItems = JSON.parse(storedItems);
+    console.log(storedItems);
 
     return storedItems;
 }

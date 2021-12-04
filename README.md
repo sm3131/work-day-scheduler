@@ -1,4 +1,4 @@
-# Work Day Scheduler Starter Code
+# Work Day Scheduler
 
 # Description
 
@@ -19,6 +19,7 @@ The work day scheduler is an online calendar that can be used to save daily task
 - JQuery
 - Bootstrap
 - Moment.js
+- Google Fonts
 
 # Code Access
 
@@ -38,11 +39,11 @@ The work day scheduler has the following capabilities:
 - Each time block has the hours of the day listed on the left side, a text area to record tasks in the middle, and two buttons on the right side
 - The text area can easily be clicked on in order to allow the user to start typing their tasks for the corresponding hour
 - The first button on the right side is a save button, which allows the user to save the task to local storage, so if they close or refresh the page the tasks that were saved will persist
-The second button on the right is a clear task button which when clicked allows the user to both delete any tasks that were written in the corresponding time slot as well as delete the tasks from local storage
+- The second button on the right is a clear task button which when clicked allows the user to both delete any tasks that were written in the corresponding time slot as well as delete the tasks from local storage
 - Lastly during standard business hours the calendar will be color coded to indicate whether the time block is in past, present, or future 
 - A grey color indicates that the time block is in the past
-- A red time block indicates that the time block is the current hour
-- A green time block indicates that the time block is in the future
+- A red color indicates that the time block is the current hour
+- A green color indicates that the time block is in the future
 - This color coding feature is meant to help the user visualize the urgency of specific daily tasks
 
 # Work Day Scheduler Link
@@ -53,4 +54,4 @@ https://sm3131.github.io/work-day-scheduler/
 
 # Credit / Contribution
 
-This project contained starter code from ____________ which provided the html and css files. These files provided a general structure and style for the calendar but the majority of the html was created by myself, Sammi Moore. Also all of the javascript was created by myself. So ultimately all of the functionality was developed by me through the use of jQuery within javascript. The styling was also a combination of starter code css, my own css, and bootstrap. 
+This project was developed from some initial starter code provided by Xandromus ([GitHub Link](https://github.com/coding-boot-camp/super-disco)), which included html and css files. These files provided a general structure and style for the calendar, but the majority of the html was created by myself, Sammi Moore. Also all of the javascript was created by myself. Ultimately all of the functionality was developed by me through the use of javascript, jQuery, and moment.js. The project styling was also a combination of starter code css, my own css, and bootstrap. 
