@@ -22,13 +22,13 @@ function saveClick(event) {
 function reloadTasks() {
 
     var savedTasks = localStorage.getItem("calendarTasks")
-    console.log(savedTasks);
+    
 
     if (!savedTasks) {
         return false;
     }
     savedTasks = JSON.parse(savedTasks);
-    console.log(savedTasks);
+    
 
     for (var i = 0; i < savedTasks.length; i++) {
         $(".task" + i).text(savedTasks[i]);
@@ -37,14 +37,14 @@ function reloadTasks() {
 
 function getStoredItems() {
     var storedItems = localStorage.getItem("calendarTasks")
-    console.log(storedItems);
+    
 
     if (!storedItems) {
         return storedItems = ["", "", "", "", "", "", "", "", ""];
     }
 
     storedItems = JSON.parse(storedItems);
-    console.log(storedItems);
+    
 
     return storedItems;
 }
@@ -95,9 +95,9 @@ function clickToIndex(clickIndex) {
     function checkTime() {
         var checkCurrentHour = moment().hour()
         colorCode(checkCurrentHour);
-        console.log(checkCurrentHour);
+        
         currentDate = $("#currentDay").text(moment().format("dddd, MMMM Do"));
-        console.log(currentDate);
+        
         if(currentHour === 0) {
             $("textarea").css("background-color", "green");
         }
@@ -111,18 +111,15 @@ function colorCode(currentHour1) {
 
         if (currentHour1 === militaryTime) {
             $("#task" + t).css("background-color", "red");
-            console.log("equal");
+          
 
         } else if (currentHour1 > militaryTime) {
-            console.log("greater than");
             $("#task" + t).css("background-color", "grey");
 
         } else if (currentHour1 < militaryTime) {
             $("#task" + t).css("background-color", "green");
-            console.log("less than");
         }
     }
-    console.log(currentHour1);
 }
 
 function standardToMilitary(hourly) {
@@ -168,7 +165,6 @@ function clearTask(event) {
             clearStoredItems = localStorage.getItem("calendarTasks");
             clearStoredItems = JSON.parse(clearStoredItems);
             clearStoredItems.splice(c, 1, "");
-            console.log(clearStoredItems);
             localStorage.setItem("calendarTasks", JSON.stringify(clearStoredItems))
         }
     }
